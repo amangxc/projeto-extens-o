@@ -1,112 +1,120 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-}
-
 body {
-  font-family: sans-serif;
-  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
 }
-
-/**header começo /**/
 
 .nav {
-  background-color: black;
-  height: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav-list {
-  display: flex;
+  background-color: white;
+  display: flex; /* itens lado a lado dentro do nav*/
   align-items: center;
-  list-style: none;
-  margin-right: 24px;
+  justify-content: space-between;  /*empurra o primeiro item pra esquerda e o último pra direita, com espaço entre eles */
+  padding: 10px 40px;
+  border-bottom: 1px solid #eee; /*linha fina separando o nav do resto da pag */
 }
 
-.nav-list a {
-  text-decoration: none;
-  color: white;
-  padding: 20px;
+.logo img {
+  height: 50px;
 }
 
-.nav-list a:hover {
-  color: rgb(110, 5, 207);
-}
-/**header-fim*/
-
-.projects {
-  width: 100%;
-  align-items: center;
-  padding: 80px;
+.menu {
+  display: flex; 
+  gap: 24px; /* espaço entre os itens */
+  list-style: none; /* remove as bolinhas dos itens */
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.projects h1 {
-  color: black;
-  font-size: 40px;
-  margin-left: 60px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.project-list {
-  width: 100%;
-  margin-left: 25px;
-  display: flex;
-  justify-content: center;
-}
-
-.text {
-  background-color: rgba(40, 39, 39, 0.663);
-  width: 100%;
-  align-items: center;
-  padding: 80px;
-}
-
-.text p {
-  color: rgb(255, 250, 250);
-  font-size: 25px;
-  margin-left: 30px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-/**fim da primeira pagina*/
-
-.blog-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-}
-
-.post {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  transition: transform 0.3s;
-}
-
-.post:hover {
-  transform: scale(1.05);
-}
-
-.post img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.post h2 {
-  margin: 10px 0;
-  color: #333;
-}
-
-.post p {
+.menu a {
+  text-decoration: none; /* remove o traço de baixo dos links */
+  color : #333;
   font-size: 14px;
-  color: #555;
+}
+
+.menu a:hover {
+  color: rgb(30,129,190);
+}
+
+.hero {
+  height: 500px; 
+  background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+  url('images/equipe.jpeg');
+  background-size: cover; /* imagem cobre todo o espaço */
+  background-position: center;
+  display: flex;
+  flex-direction: column; /*texto, titulo e botao um embaixo do outro */
+  justify-content: center;
+  padding: 0 60px;
+}
+
+.hero h1 {
+  color:white;
+  font-size: 28px;
+  max-width: 600px; /* impede que o titulo estique em telas largas */
+  margin-bottom: 16px;
+}
+
+.hero p {
+  color: #eee;
+  font-size: 16px;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.hero .cta-btn {
+  display: inline-block; /* permite dar padding num link sem ele quebrar linha */
+  background-color: rgb(30,120,190);
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: fit-content; /*botao fica do tamanho do texto, não da linha toda */
+  font-weight: bold;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* empurra o conteudo pra baixo */
+  padding: 24px;
+  color: white;
+  background-color: #666;
+  background-size: cover;
+  background-position: center;
+}
+
+.card h3{
+  font-size: 18px;
+  color: #eee;
+}
+
+.card p {
+  font-size: 13px;
+  color: #eee;
+}
+
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    height: auto;
+    padding: 20px;
+  }
+
 }
