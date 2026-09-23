@@ -3,7 +3,7 @@ body {
 }
 
 .nav {
-  background-color: white;
+  background-color: black;
   display: flex; /* itens lado a lado dentro do nav*/
   align-items: center;
   justify-content: space-between;  /*empurra o primeiro item pra esquerda e o último pra direita, com espaço entre eles */
@@ -23,9 +23,11 @@ body {
   margin-top: 10px;
 }
 
-.menu a {
+.menu a,
+.menu a:link,
+.menu a:visited{
   text-decoration: none; /* remove o traço de baixo dos links */
-  color : #333;
+  color : white;
   font-size: 14px;
 }
 
@@ -47,7 +49,7 @@ body {
 
 .hero h1 {
   color:white;
-  font-size: 28px;
+  font-size: 42px;
   max-width: 600px; /* impede que o titulo estique em telas largas */
   margin-bottom: 16px;
 }
@@ -95,6 +97,119 @@ body {
 .card p {
   font-size: 13px;
   color: #eee;
+}
+.destaque {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgb(30, 120, 190);
+  color:white;
+  padding: 0 40px;
+}
+
+.destaque h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.destaque p {
+  font-size: 16px;
+}
+
+.beneficios {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+.beneficios h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.beneficios ul {
+  list-style: none;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.beneficios li{
+  font-size: 16px;
+  margin-bottom: 12px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+
+.inscricao {
+  background-color: #2b2b2b;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.inscricao h2{
+  color: white;
+  margin-bottom: 24px;
+}
+
+.inscricao form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.inscricao label {
+  color: white;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.inscricao input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+}
+
+.inscricao button {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: rgb(30, 120, 190);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor:pointer
+}
+
+.inscricao button:hover{
+  background-color: rgb(50, 150, 220);
+}
+
+.galeria {
+  padding: 60px 40px;
+  text-align:center;
+}
+
+.galeria h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+}
+
+.alunas-feminino {
+  display: flex;
+  justify-content: center;
+  gap: 20px
+}
+
+.alunas-feminino img {
+  width: 45%;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
